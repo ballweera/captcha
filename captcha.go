@@ -11,7 +11,7 @@ func Generate(pattern, left, operator, right int) string {
 	case 1:
 		result = fmt.Sprintf("%v %s %s", left, sign[operator-1], words[right-1])
 	case 2:
-		result = fmt.Sprintf("%s + %v", words[left-1], right)
+		result = fmt.Sprintf("%s %s %v", words[left-1], sign[operator-1], right)
 	}
 	return result
 }
