@@ -16,13 +16,13 @@ func leftOperand(pattern, value int) string {
 	if pattern == 1 {
 		return strconv.Itoa(value)
 	} else {
-		return words[value-1]
+		return words[value]
 	}
 }
 
 func rightOperand(pattern, value int) string {
 	if pattern == 1 {
-		return words[value-1]
+		return words[value]
 	} else {
 		return strconv.Itoa(value)
 	}
