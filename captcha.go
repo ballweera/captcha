@@ -1,8 +1,8 @@
 package captcha
 
+import "fmt"
+
 func Generate(pattern, left, operator, right int) string {
-	if right == 2 {
-		return "1 + TWO"
-	}
-	return "1 + ONE"
+	words := [3]string{"ONE", "TWO", "THREE"}
+	return fmt.Sprintf("1 + %s", words[right-1])
 }

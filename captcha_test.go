@@ -24,4 +24,13 @@ func TestPattern1(t *testing.T) {
 			t.Errorf("want '%s' but got '%s'", want, got)
 		}
 	})
+
+	t.Run("1 + THREE", func(t *testing.T) {
+		got := captcha.Generate(1, 1, 1, 3)
+		want := "1 + THREE"
+
+		if want != got {
+			t.Errorf("want '%s' but got '%s'", want, got)
+		}
+	})
 }
