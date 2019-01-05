@@ -8,7 +8,7 @@ func Generate(pattern, left, operator, right int) string {
 
 	switch pattern {
 	case 1:
-		result = fmt.Sprintf("1 + %s", words[right-1])
+		result = fmt.Sprintf("%v + %s", left, words[right-1])
 	case 2:
 		result = fmt.Sprintf("%s + 1", words[left-1])
 	}
