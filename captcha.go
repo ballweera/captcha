@@ -1,17 +1,33 @@
 package captcha
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+)
 
-func Generate(pattern, left, operator, right int) string {
-	words := []string{"ONE", "TWO", "THREE", "FOUR", "FIVE", "SIX", "SEVEN", "EIGHT", "NINE"}
-	sign := []string{"+", "-", "*"}
-	var result string
+var words []string = []string{"ONE", "TWO", "THREE", "FOUR", "FIVE", "SIX", "SEVEN", "EIGHT", "NINE"}
+var operatorWords []string = []string{"+", "-", "*"}
 
-	switch pattern {
-	case 1:
-		result = fmt.Sprintf("%v %s %s", left, sign[operator-1], words[right-1])
-	case 2:
-		result = fmt.Sprintf("%s %s %v", words[left-1], sign[operator-1], right)
+func Generate(pattern, l, op, r int) string {
+	return fmt.Sprintf("%s %s %s", leftOperand(pattern, l), operator(op), rightOperand(pattern, r))
+}
+
+func leftOperand(pattern, value int) string {
+	if pattern == 1 {
+		return strconv.Itoa(value)
+	} else {
+		return words[value-1]
 	}
-	return result
+}
+
+func rightOperand(pattern, value int) string {
+	if pattern == 1 {
+		return words[value-1]
+	} else {
+		return strconv.Itoa(value)
+	}
+}
+
+func operator(value int) string {
+	return operatorWords[value-1]
 }
