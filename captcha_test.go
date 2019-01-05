@@ -50,6 +50,12 @@ func TestPattern2(t *testing.T) {
 		want := "NINE + 1"
 		assertError(want, got, t)
 	})
+
+	t.Run("TWO + 5", func(t *testing.T) {
+		got := captcha.Generate(2, 2, 1, 5)
+		want := "TWO + 5"
+		assertError(want, got, t)
+	})
 }
 
 func assertError(want, got string, t *testing.T) {
