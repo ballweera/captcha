@@ -5,7 +5,7 @@ import (
 	"strconv"
 )
 
-var words []string = []string{"ONE", "TWO", "THREE", "FOUR", "FIVE", "SIX", "SEVEN", "EIGHT", "NINE"}
+var words []string = []string{"ZERO", "ONE", "TWO", "THREE", "FOUR", "FIVE", "SIX", "SEVEN", "EIGHT", "NINE"}
 var operatorWords []string = []string{"+", "-", "*"}
 
 func Generate(pattern, l, op, r int) string {
