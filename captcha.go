@@ -4,7 +4,7 @@ import "fmt"
 
 func Generate(pattern, left, operator, right int) string {
 	words := []string{"ONE", "TWO", "THREE", "FOUR", "FIVE", "SIX", "SEVEN", "EIGHT", "NINE"}
-	sign := []string{"+", "-"}
+	sign := []string{"+", "-", "*"}
 	var result string
 
 	switch pattern {
