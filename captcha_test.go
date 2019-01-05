@@ -32,6 +32,14 @@ func TestPattern1(t *testing.T) {
 	})
 }
 
+func TestPattern2(t *testing.T) {
+	t.Run("ONE + 1", func(t *testing.T) {
+		got := captcha.Generate(2, 1, 1, 1)
+		want := "ONE + 1"
+		assertError(want, got, t)
+	})
+}
+
 func assertError(want, got string, t *testing.T) {
 	if want != got {
 		t.Errorf("want '%s' but got '%s'", want, got)
